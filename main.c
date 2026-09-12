@@ -14,7 +14,7 @@ void listar_produtos(Produto lista[], int total) {
     printf("\n--- Produtos Cadastrados ---\n");
     for (int i = 0; i < total; i++) {
         // BUG: esqueceram de imprimir o ID e a quebra de linha está inadequada
-        printf("Nome: %s | Preco: R$ %.2f | Qtd: %d", lista[i].nome, lista[i].preco, lista[i].quantidade);
+        printf("ID: %d | categoria: %s | Nome: %s | Preco: R$ %.2f | Qtd: %d\n", lista[i].id, lista[i].categoria, lista[i].nome, lista[i].preco, lista[i].quantidade);
     }
 }
 
@@ -22,7 +22,7 @@ float calcular_total(Produto lista[], int total) {
     float soma = 0.0;
     for (int i = 0; i < total; i++) {
         // BUG: calculo multiplicando errado e nao aplica taxa
-        soma += lista[i].preco;
+        soma += lista[i].preco * lista[i].quantidade;
     }
     return soma;
 }
@@ -32,11 +32,14 @@ int main(void) {
     int total_produtos = 2;
 
     estoque[0].id = 1;
+    strcpy(estoque[0].categoria, "Papelaria");
     strcpy(estoque[0].nome, "Caderno");
     estoque[0].preco = 15.50;
     estoque[0].quantidade = 10;
 
     estoque[1].id = 2;
+    strcpy(estoque[1].categoria, "escritoria");
+    strcpy(estoque[1].categoria, "Papelaria");
     strcpy(estoque[1].nome, "Caneta");
     estoque[1].preco = 3.00;
     estoque[1].quantidade = 50;
