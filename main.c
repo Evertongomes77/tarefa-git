@@ -8,6 +8,8 @@ void exibir_menu(void) {
     printf("2 - Exibir valor total em estoque\n");
     printf("0 - Sair\n");
     printf("Escolha uma opcao: ");
+    printf("4 - Exibir total a prazo (com juros)\n");
+    printf("0 - Sair\n");
 }
 
 void listar_produtos(Produto lista[], int total) {
