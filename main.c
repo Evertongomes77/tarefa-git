@@ -60,9 +60,10 @@ int main(void) {
             case 0:
                 printf("\nEncerrando o programa...\n");
                 break;
-            case 4:
+           case 4:
                 printf("Total a prazo com juros: R$ %.2f\n", aplicar_juros(total));
                 break;
+
             default:
                 printf("\nOpcao invalida!\n");
                 break;
@@ -70,6 +71,6 @@ int main(void) {
     }
 
     return 0;
-      float aplicar_juros(float total) {
+     float aplicar_juros(float total) {
     return total + (total * TAXA_JUROS);
 }
